@@ -5,10 +5,9 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 class Assignment extends Component{
   render(){
     var date = new Date().getDate()
-    const d = new Date()
+    const d = new Date();
     let weekday=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-    let day = weekday[d.getDay()]; 
-     let day_1 = weekday[d.getDay()+1]; 
+    let day = weekday.at([d.getDay()]); 
     var month = new Date().getMonth() + 1;
     var year = new Date().getFullYear();
     return(
@@ -21,33 +20,33 @@ class Assignment extends Component{
 
 
           <View style={{alignItems:'center',justifyContent:'center'}}>
-          <Text style={styles.text}>{weekday[d.getDay()-3]}</Text>
+          <Text style={styles.text}>{weekday.at([d.getDay()-3])}</Text>
           <Text style={styles.date}>{date-3>0?date-3:''}</Text>
         </View>
         <View>
-          <Text style={styles.text}>{weekday[d.getDay()-2]}</Text>
+          <Text style={styles.text}>{weekday.at([d.getDay()-2])}</Text>
           <Text style={styles.date}>{date-2>0?date-2:''}</Text>
         </View>
         <View>
-          <Text style={styles.text}>{weekday[d.getDay()-1]}</Text>
+          <Text style={styles.text}>{weekday.at([d.getDay()-1])}</Text>
           <Text style={styles.date}>{date-1>0?date-1:''}</Text>
         </View>
         <View style={{justifyContent:'center',alignItems:'center'}}>
-          <Text style={styles.text}>{weekday[d.getDay()]}</Text>
+          <Text style={styles.text}>{weekday.at([d.getDay()])}</Text>
           <View  style={{marginTop:10,width:30,height:30,borderColor: "#755805",padding:6,borderRadius:15,backgroundColor:'#755805'}}>
           <Text>{date}</Text>
           </View>
           </View>
         <View>
-          <Text style={styles.text}>{weekday[d.getDay()+1]}</Text>
+          <Text style={styles.text}>{weekday.at([d.getDay()+1])}</Text>
           <Text  style={styles.date}>{date+1}</Text>
         </View>
         <View>
-          <Text style={styles.text}>{weekday[d.getDay()+2]}</Text>
+          <Text style={styles.text}>{weekday.at([d.getDay()+2])}</Text>
           <Text  style={styles.date}>{date+2}</Text>
         </View>
         <View>
-          <Text style={styles.text}>{weekday[d.getDay()+3]}</Text>
+          <Text style={styles.text}>{weekday.at([d.getDay()+3])}</Text>
           <Text  style={styles.date}>{date+3}</Text>
         </View>
         </View>
@@ -73,7 +72,7 @@ class Assignment extends Component{
       />
         <View style={{alignItems:'flex-end',padding:20}}>
           <Text style={{fontSize:40,color:"#755805",}}>{date+1}</Text>
-          <Text style={{fontSize:25,color:"#755805",}}>{day_1}</Text>
+          <Text style={{fontSize:25,color:"#755805",}}>{weekday.at([d.getDay()+1])}</Text>
         </View>
         </View>
         </View>
